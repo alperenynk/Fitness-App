@@ -1,9 +1,12 @@
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Exercises() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View style={styles.randomQuote}>
+
+      </View>
       <View style={styles.bodyParts}>
         {/* Item Start */}
         <View style={styles.item}>
@@ -11,7 +14,7 @@ export default function Exercises() {
           <View style={styles.box}>
             <Image
               style={styles.image}
-              source={require("@/assets/images/background-image.png")}
+              source={require("@/assets/images/back.jpg")}
             ></Image>
           </View>
         </View>
@@ -22,7 +25,7 @@ export default function Exercises() {
           <View style={styles.box}>
             <Image
               style={styles.image}
-              source={require("@/assets/images/background-image.png")}
+              source={require("@/assets/images/chest.png")}
             ></Image>
           </View>
         </View>
@@ -33,7 +36,7 @@ export default function Exercises() {
           <View style={styles.box}>
             <Image
               style={styles.image}
-              source={require("@/assets/images/background-image.png")}
+              source={require("@/assets/images/biceps.jpg")}
             ></Image>
           </View>
         </View>
@@ -44,13 +47,57 @@ export default function Exercises() {
           <View style={styles.box}>
             <Image
               style={styles.image}
-              source={require("@/assets/images/background-image.png")}
+              source={require("@/assets/images/triceps.png")}
+            ></Image>
+          </View>
+        </View>
+        {/* Item End */}
+        {/* Item Start */}
+        <View style={styles.item}>
+          <Text style={styles.text}>Shoulders</Text>
+          <View style={styles.box}>
+            <Image
+              style={styles.image}
+              source={require("@/assets/images/shoulders.png")}
+            ></Image>
+          </View>
+        </View>
+        {/* Item End */}
+        {/* Item Start */}
+        <View style={styles.item}>
+          <Text style={styles.text}>Abs</Text>
+          <View style={styles.box}>
+            <Image
+              style={styles.image}
+              source={require("@/assets/images/abs.png")}
+            ></Image>
+          </View>
+        </View>
+        {/* Item End */}
+        {/* Item Start */}
+        <View style={styles.item}>
+          <Text style={styles.text}>Quads</Text>
+          <View style={styles.box}>
+            <Image
+              style={styles.image}
+              source={require("@/assets/images/quads.png")}
+            ></Image>
+          </View>
+        </View>
+        {/* Item End */}
+        {/* Item Start */}
+        <View style={styles.item}>
+          <Text style={styles.text}>Calves</Text>
+          <View style={styles.box}>
+            <Image
+              style={styles.image}
+              source={require("@/assets/images/calves.jpg")}
             ></Image>
           </View>
         </View>
         {/* Item End */}
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -60,11 +107,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#620125",
   },
 
+  randomQuote: {
+
+  },
+
   bodyParts: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     marginTop: "15%",
+    paddingBottom: 20,
   },
 
   item: {
