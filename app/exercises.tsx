@@ -1,6 +1,13 @@
 import { Image } from "expo-image";
 import { useEffect, useState } from "react";
-import { Animated, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Animated,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function Exercises() {
   const motivationalQuotes = [
@@ -47,106 +54,129 @@ export default function Exercises() {
       <View style={styles.bodyParts}>
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/back.jpg")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Back</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/back.jpg")}
+              ></Image>
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Back</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/chest.png")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Chest</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/chest.png")}
+              ></Image>
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Chest</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+        
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/biceps.jpg")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Biceps</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/biceps.jpg")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Biceps</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/triceps.png")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Triceps</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/triceps.png")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Triceps</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/shoulders.png")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Shoulders</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/shoulders.png")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Shoulders</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/abs.png")}
-            ></Image>
-          </View>
-          <View style={styles.labelContainer}>
-            <Text style={styles.text}>Abs</Text>
-          </View>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/abs.png")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Abs</Text>
+              </View>
+            </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/quads.png")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Quads</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/quads.png")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Quads</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
+
         {/* Item Start */}
         <View style={styles.item}>
-          <View style={styles.box}>
-            <Image
-              style={styles.image}
-              source={require("@/assets/images/calves.jpg")}
-            ></Image>
-            <View style={styles.labelContainer}>
-              <Text style={styles.text}>Calves</Text>
+          <Pressable>
+            <View style={styles.box}>
+              <Image
+                style={styles.image}
+                source={require("@/assets/images/calves.jpg")}
+              />
+              <View style={styles.labelContainer}>
+                <Text style={styles.text}>Calves</Text>
+              </View>
             </View>
-          </View>
+          </Pressable>
         </View>
         {/* Item End */}
       </View>
