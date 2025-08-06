@@ -1,3 +1,4 @@
+import ExerciseModal from "@/components/ExerciseModal";
 import { Image } from "expo-image";
 import { useEffect, useState } from "react";
 import {
@@ -10,6 +11,8 @@ import {
 } from "react-native";
 
 export default function Exercises() {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const motivationalQuotes = [
     "🏋️‍♂️ Push yourself, because no one else is going to do it for you.",
     "🔥 No pain, no gain!",
@@ -45,142 +48,157 @@ export default function Exercises() {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.quoteBox}>
-        <Animated.Text style={[styles.quoteText, { opacity: fadeAnim }]}>
-          {motivationalQuotes[quoteIndex]}
-        </Animated.Text>
-      </View>
-      <View style={styles.bodyParts}>
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/back.jpg")}
-              ></Image>
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Back</Text>
-              </View>
-            </View>
-          </Pressable>
+    <>
+      <ScrollView style={styles.container}>
+        <View style={styles.quoteBox}>
+          <Animated.Text style={[styles.quoteText, { opacity: fadeAnim }]}>
+            {motivationalQuotes[quoteIndex]}
+          </Animated.Text>
         </View>
-        {/* Item End */}
+        <View style={styles.bodyParts}>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/back.jpg")}
+                  contentFit="cover"
+                ></Image>
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Back</Text>
+                </View>
+              </View>
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/chest.png")}
-              ></Image>
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Chest</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable onPress={() => setModalVisible(true)}>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/chest.png")}
+                  contentFit="cover"
+                ></Image>
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Chest</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
-        
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/biceps.jpg")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Biceps</Text>
-              </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/triceps.png")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Triceps</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable onPress={() => setModalVisible(true)}>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/biceps.jpg")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Biceps</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/shoulders.png")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Shoulders</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/triceps.png")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Triceps</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/abs.png")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Abs</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/shoulders.png")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Shoulders</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/quads.png")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Quads</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/abs.png")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Abs</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-        {/* Item End */}
+            </Pressable>
+          </View>
+          {/* Item End */}
 
-        {/* Item Start */}
-        <View style={styles.item}>
-          <Pressable>
-            <View style={styles.box}>
-              <Image
-                style={styles.image}
-                source={require("@/assets/images/calves.jpg")}
-              />
-              <View style={styles.labelContainer}>
-                <Text style={styles.text}>Calves</Text>
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/quads.png")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Quads</Text>
+                </View>
               </View>
-            </View>
-          </Pressable>
+            </Pressable>
+          </View>
+          {/* Item End */}
+
+          {/* Item Start */}
+          <View style={styles.item}>
+            <Pressable>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image}
+                  source={require("@/assets/images/calves.jpg")}
+                  contentFit="cover"
+                />
+                <View style={styles.labelContainer}>
+                  <Text style={styles.text}>Calves</Text>
+                </View>
+              </View>
+            </Pressable>
+          </View>
+          {/* Item End */}
         </View>
-        {/* Item End */}
-      </View>
-    </ScrollView>
+      </ScrollView>
+      {/* Modal */}
+      <ExerciseModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+      />
+    </>
   );
 }
 
@@ -235,7 +253,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
-    resizeMode: "cover",
   },
 
   labelContainer: {
