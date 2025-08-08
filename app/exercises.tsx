@@ -13,18 +13,18 @@ import {
 export default function Exercises() {
   const [modalVisible, setModalVisible] = useState(false);
 
-  const motivationalQuotes = [
-    "🏋️‍♂️ Push yourself, because no one else is going to do it for you.",
-    "🔥 No pain, no gain!",
-    "🧠 The body achieves what the mind believes.",
-    "💪 You don’t have to be extreme, just consistent.",
-    "⚡️ Train insane or remain the same.",
-    "🎯 Strive for progress, not perfection.",
-    "😤 Sweat is just fat crying.",
+  const motivationalImages = [
+    require("../assets/motivational/motivational1.jpg"),
+    require("../assets/motivational/motivational2.jpg"),
+    require("../assets/motivational/motivational3.jpg"),
+    require("../assets/motivational/motivational4.jpg"),
+    require("../assets/motivational/motivational5.jpg"),
+    require("../assets/motivational/motivational6.jpg"),
+    require("../assets/motivational/motivational7.jpg"),
   ];
 
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const fadeAnim = useState(new Animated.Value(0))[0];
+  const fadeAnim = useState(new Animated.Value(1))[0];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,11 +38,11 @@ export default function Exercises() {
       setQuoteIndex((prevIndex) => {
         let nextIndex;
         do {
-          nextIndex = Math.floor(Math.random() * motivationalQuotes.length);
+          nextIndex = Math.floor(Math.random() * motivationalImages.length);
         } while (nextIndex === prevIndex);
         return nextIndex;
       });
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,14 +51,19 @@ export default function Exercises() {
     <>
       <ScrollView style={styles.container}>
         <View style={styles.quoteBox}>
-          <Animated.Text style={[styles.quoteText, { opacity: fadeAnim }]}>
-            {motivationalQuotes[quoteIndex]}
-          </Animated.Text>
+          <Animated.Image
+            source={motivationalImages[quoteIndex]}
+            style={[styles.motivationalImage, { opacity: fadeAnim }]}
+            resizeMode="cover"
+          />
+        </View>
+        <View style={styles.exercisesTextContainer}>
+          <Text style={styles.exercisesText}>EXERCISES</Text>
         </View>
         <View style={styles.bodyParts}>
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -109,7 +114,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -126,7 +131,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -143,7 +148,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -160,7 +165,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -177,7 +182,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable>
+            <Pressable onPress={() => setModalVisible(true)}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -210,31 +215,35 @@ const styles = StyleSheet.create({
 
   quoteBox: {
     width: "90%",
-    height: 220,
-    backgroundColor: "#001F54",
+    height: 500,
     borderRadius: 20,
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "15%",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
   },
 
-  quoteText: {
-    color: "#fff",
-    fontSize: 20,
-    fontStyle: "italic",
+  motivationalImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 20,
+  },
+
+  exercisesTextContainer: {
+    marginTop: "7.5%",
+  },
+
+  exercisesText: {
     textAlign: "center",
-    lineHeight: 24,
-    fontWeight: "bold",
+    fontSize: 22,
+    fontWeight: "700",
   },
 
   bodyParts: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
-    marginTop: "10%",
+    marginTop: "7.5%",
     paddingBottom: 20,
   },
 
