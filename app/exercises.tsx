@@ -1,4 +1,5 @@
 import ExerciseModal from "@/components/ExerciseModal";
+import { Modak_400Regular, useFonts } from "@expo-google-fonts/modak";
 import { Image } from "expo-image";
 import { useEffect, useState } from "react";
 import {
@@ -11,6 +12,10 @@ import {
 } from "react-native";
 
 export default function Exercises() {
+  const [fontLoaded] = useFonts({
+    Modak_400Regular,
+  });
+
   const [modalVisible, setModalVisible] = useState(false);
 
   const motivationalImages = [
@@ -230,20 +235,20 @@ const styles = StyleSheet.create({
   },
 
   exercisesTextContainer: {
-    marginTop: "7.5%",
+    marginTop: "5%",
   },
 
   exercisesText: {
     textAlign: "center",
-    fontSize: 22,
-    fontWeight: "700",
+    fontSize: 30,
+    fontFamily: "Modak_400Regular",
   },
 
   bodyParts: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
-    marginTop: "7.5%",
+    marginTop: "5%",
     paddingBottom: 20,
   },
 
