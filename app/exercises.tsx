@@ -215,7 +215,7 @@ export default function Exercises() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#101111ff",
   },
 
   quoteBox: {
@@ -235,20 +235,21 @@ const styles = StyleSheet.create({
   },
 
   exercisesTextContainer: {
-    marginTop: "5%",
+    marginTop: "3.5%",
   },
 
   exercisesText: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 40,
     fontFamily: "Modak_400Regular",
+    color: "#fff",
   },
 
   bodyParts: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
-    marginTop: "5%",
+    marginTop: "3.5%",
     paddingBottom: 20,
   },
 
