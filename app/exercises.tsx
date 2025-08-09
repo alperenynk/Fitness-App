@@ -17,6 +17,12 @@ export default function Exercises() {
   });
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
+
+  const openModal = (group: string) => {
+    setSelectedGroup(group);
+    setModalVisible(true);
+  };
 
   const motivationalImages = [
     require("../assets/motivational/motivational1.jpg"),
@@ -26,6 +32,7 @@ export default function Exercises() {
     require("../assets/motivational/motivational5.jpg"),
     require("../assets/motivational/motivational6.jpg"),
     require("../assets/motivational/motivational7.jpg"),
+    require("../assets/motivational/motivational8.jpg"),
   ];
 
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -68,7 +75,7 @@ export default function Exercises() {
         <View style={styles.bodyParts}>
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("back")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -85,7 +92,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("chest")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -102,7 +109,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("biceps")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -119,7 +126,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("triceps")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -136,7 +143,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("shoulders")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -153,7 +160,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("abs")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -170,7 +177,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("quads")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -187,7 +194,7 @@ export default function Exercises() {
 
           {/* Item Start */}
           <View style={styles.item}>
-            <Pressable onPress={() => setModalVisible(true)}>
+            <Pressable onPress={() => openModal("calves")}>
               <View style={styles.box}>
                 <Image
                   style={styles.image}
@@ -207,6 +214,7 @@ export default function Exercises() {
       <ExerciseModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
+        group={selectedGroup}
       />
     </>
   );
