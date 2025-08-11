@@ -1,50 +1,34 @@
-# Welcome to your Expo app 👋
+# Fitness App 💪🏽
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean and simple fitness app built with React Native and Expo. Explore muscle groups, view animated exercise demos, and stay motivated with inspiring background images.
 
-## Get started
+---
 
-1. Install dependencies
+## 🎯 Features
 
-   ```bash
-   npm install
-   ```
+- Touchable 8 muscle group cards (Back, Chest, Biceps, Triceps, Shoulders, Abs, Quads, Calves)
+- Animated GIF demos for each exercise, shown in a modal popup
+- Motivational background images that fade smoothly every 5 seconds
+- Custom font for stylish headers
+- Responsive and sleek UI optimized for mobile devices
+- Easy navigation with tap-to-open exercise details modal
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 How to Use
 
-In the output, you'll find options to open the app in a
+1. Open the app to see a motivational image.
+2. Scroll to view muscle groups.
+3. Tap on a muscle group card to open exercise animations.
+4. Swipe or tap the close icon to exit the modal.
+5. Repeat for other muscle groups to explore different exercises.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ⚙️ Technologies
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- React Native & Expo
+- Animated API for smooth fades
+- expo-image for optimized image loading
+- @expo/vector-icons for icons
+- Google Fonts (Modak)
