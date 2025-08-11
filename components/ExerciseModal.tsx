@@ -1,11 +1,10 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Image, Modal, ScrollView, StyleSheet, View } from "react-native";
+import { Image as ExpoImage } from "expo-image";
+import { Modal, ScrollView, StyleSheet, View } from "react-native";
 
 type ExerciseModalProps = {
   visible: boolean;
   onClose: () => void;
-
-  //
   group: string | null;
 };
 
@@ -104,7 +103,7 @@ export default function ExerciseModal({
           <ScrollView contentContainerStyle={styles.gifGrid}>
             {gifs.map((gif, index) => (
               <View key={index} style={styles.gifBox}>
-                <Image source={gif} style={styles.gifImage} />
+                <ExpoImage source={gif} style={styles.gifImage} />
               </View>
             ))}
           </ScrollView>
