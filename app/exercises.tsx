@@ -1,5 +1,6 @@
 import ExerciseModal from "@/components/ExerciseModal";
 import { Modak_400Regular, useFonts } from "@expo-google-fonts/modak";
+// import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Image } from "expo-image";
 import { useEffect, useState } from "react";
 import {
@@ -62,6 +63,15 @@ export default function Exercises() {
   return (
     <>
       <ScrollView style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>
+            READY TO
+            <Text style={styles.highlight}>{"\n"}WORKOUT</Text>
+          </Text>
+          {/* <View>
+            <FontAwesome name="user-circle-o" size={32} color="white" />
+          </View> */}
+        </View>
         <View style={styles.quoteBox}>
           <Animated.Image
             source={motivationalImages[quoteIndex]}
@@ -226,6 +236,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#101111ff",
   },
 
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: "15%",
+    marginHorizontal: "7.5%",
+  },
+
+  headerText: {
+    color: "#fff",
+    fontWeight: "900",
+    fontSize: 40,
+  },
+
+  highlight: {
+    color: "#E51F50",
+  },
+
   quoteBox: {
     width: "90%",
     height: 500,
@@ -233,7 +261,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "15%",
+    marginTop: "5%",
   },
 
   motivationalImage: {
